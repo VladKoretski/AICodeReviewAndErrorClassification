@@ -1,1 +1,11 @@
-# AICodeReviewAndErrorClassification
+# Ревью кода + классификация ошибок  
+* Выполнил Корецкий В.П. *
+  
+## Пример 1 (Python): команда из пользовательского ввода (риск безопасности)
+Ситуация: утилита запускает системную команду. Аргумент приходит от пользователя
+````
+import os
+def run_backup(folder: str) -> int:    # folder приходит извне (например, из формы)     
+cmd = f"tar -czf backup.tgz {folder}"    
+    return os.system(cmd)
+````
